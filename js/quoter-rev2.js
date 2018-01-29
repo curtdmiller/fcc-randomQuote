@@ -10,7 +10,7 @@ function hashtagFromName(name) {
 }
 function firstQuote() {
     var quote, author, authorHash;
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(json) {
+    $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(json) {
         quote = json[0].content;
         author = json[0].title;
         authorHash = hashtagFromName(author);
@@ -23,7 +23,7 @@ function newQuote() {
     var quote, author, authorHash;
     // change refresh button to spinner until ajax operation complete
     $('.refresh-btn').html('<i class="fa fa-spinner fa-lg fa-spin"></i>');
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(json) {
+    $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(json) {
         quote = json[0].content;
         author = json[0].title;
         authorHash = hashtagFromName(author);
